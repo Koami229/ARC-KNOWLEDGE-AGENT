@@ -20,7 +20,14 @@ export default function Dashboard() {
     if (isManual) setRefreshing(true);
     try {
       const { data } = await axios.get('/api/transactions');
-      setStats(data);
+      if (data) {
+        setStats({
+          count: data.count ?? 0,
+          totalAmount: data.totalAmount ?? 0,
+          avgCost: data.avgCost ?? 0,
+          transactions: data.transactions ?? []
+        });
+      }
     } catch (error) {
       console.error('Error loading dashboard:', error);
     } finally {
@@ -75,21 +82,21 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <StatCard 
           label="Total Transactions" 
-          value={stats.count.toLocaleString()} 
+          value={(stats.count ?? 0).toLocaleString()} 
           icon={<Layers className="text-green-400" size={20} />}
           subValue="Verified On-chain"
           color="green"
         />
         <StatCard 
           label="Volume Settled" 
-          value={`${stats.totalAmount.toFixed(3)} USDC`} 
+          value={`${(stats.totalAmount ?? 0).toFixed(3)} USDC`} 
           icon={<DollarSign className="text-green-300" size={20} />}
           subValue="Real-time Settlements"
           color="green"
         />
         <StatCard 
           label="Average Efficiency" 
-          value={`${(stats.avgCost * 1000).toFixed(1)}m`} 
+          value={`${((stats.avgCost ?? 0) * 1000).toFixed(1)}m`} 
           icon={<Activity className="text-blue-400" size={20} />}
           subValue="Latency Optimized"
           color="blue"
