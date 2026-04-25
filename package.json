@@ -1,5 +1,5 @@
 {
-  "name": "react-example",
+  "name": "pay-per-knowledge-agent",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,15 +9,11 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "start": "tsx server.ts"
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
     "@google/generative-ai": "^0.24.1",
-    "@tailwindcss/vite": "^4.1.14",
-    "@types/cors": "^2.8.19",
-    "@types/uuid": "^10.0.0",
-    "@vitejs/plugin-react": "^5.0.4",
     "axios": "^1.15.2",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
@@ -27,12 +23,15 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.14.2",
-    "uuid": "^14.0.0",
-    "vite": "^6.2.0"
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/cors": "^2.8.19",
     "@types/express": "^4.17.21",
     "@types/node": "^22.14.0",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.21",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
