@@ -1,7 +1,7 @@
 import express from 'express';
-import { decideAPI } from '../services/geminiService';
-import { fetchPremiumData, getAPICost } from '../services/dataApi';
-import { sendPayment } from '../services/circleSimulator';
+import { decideAPI } from '../services/geminiService.ts';
+import { fetchPremiumData, getAPICost } from '../services/dataApi.ts';
+import { sendPayment } from '../services/circleSimulator.ts';
 
 const router = express.Router();
 

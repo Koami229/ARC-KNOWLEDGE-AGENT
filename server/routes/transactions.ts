@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllTransactions } from '../services/circleSimulator';
+import { getAllTransactions } from '../services/circleSimulator.ts';
 
 const router = express.Router();
 

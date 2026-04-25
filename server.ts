@@ -2,9 +2,9 @@ import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import cors from "cors";
-import askRoute from "./server/routes/ask";
-import transactionsRoute from "./server/routes/transactions";
-import { sendPayment } from "./server/services/circleSimulator";
+import askRoute from "./server/routes/ask.ts";
+import transactionsRoute from "./server/routes/transactions.ts";
+import { sendPayment } from "./server/services/circleSimulator.ts";
 
 const questions = [
   "Quel temps fait-il à Abidjan ?",
