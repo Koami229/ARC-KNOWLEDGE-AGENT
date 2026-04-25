@@ -1,0 +1,6 @@
+{
+  "name": "Pay-per-Knowledge AI Agent",
+  "description": "An AI-powered agent prototype demonstrating nanopayments via Circle on the Arc blockchain for accessing premium data APIs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
